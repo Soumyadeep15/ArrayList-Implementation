@@ -35,16 +35,13 @@ public class ArrayList{
         }
         return a[index];
     }
-    public void remove(int index){
-        if(index<=-1 || index>=a.length){
-            throw new IndexOutOfBoundsException();
-        }
-        for(int i=index;i<=size();i++){
-            a[i]=a[i+1];
-        }
-        a[p]=null;
-        p--;
-    }
+	
+     public void removeItems(int index) {
+	 for(int i=index+1 ; i<size() ; i++) {
+	      a[i-1] = a[i];
+}
+	p--;
+	}
 
     public int size(){
         return p;
