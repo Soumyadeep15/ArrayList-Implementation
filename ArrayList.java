@@ -14,17 +14,14 @@ public class ArrayList{
         p++;
     }
 
-    public void add(int index,Object e) {
-        if(index<=-1 || index>=a.length){
-            throw new IndexOutOfBoundsException();
-        }
-        if(p>=a.length) increase();
-        for(int i=index;i<=size();i++){
-            a[i]=a[i+1];
-        }
-        a[index]=e;
-        p++;
-    }
+   	public void add(int index , Object data) {
+		if(p>=a.length) increase();
+		for(int i = size()-1; i>=index ; i--) {
+			a[i+1] = a[i];
+		}
+		a[index] = data;
+		p++;
+	}
 
     private void increase(){
         Object[] temp=new Object[a.length+3];
